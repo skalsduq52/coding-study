@@ -33,6 +33,7 @@ public class Student {
 
 ---------------------------------------------------------------------------------------------------------------------
 메인 메소드
+package studentSearch;
 
 import java.util.ArrayList;
 import java.util.Scanner;
