@@ -1,0 +1,81 @@
+Student 클래스 생성
+
+// 요구사항 1 : Student 클래스 생성(String name(이름), no(학번) 필드를 가짐)
+public class Student {
+
+	// 필드
+	private String name;
+	private String no;
+	
+	public Student() {}
+	
+	// 생성자
+	public Student (String name, String no) {
+		this.name = name;
+		this.no = no;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String getNo() {
+		return no;
+	}
+	
+	public String toString() {
+		return "이름 : "+name+" / 학번 : "+no;
+	}
+	
+}
+
+---------------------------------------------------------------------------------------------------------------------
+메인 메소드
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class run {
+
+	public static void main(String[] args) {
+
+		ArrayList<Student> list = new ArrayList<Student>();
+		
+		Student student1 = new Student("나민엽","1234");
+		Student student2 = new Student("손주연","5678");
+		Student student3 = new Student("정지수","1011");
+		Student student4 = new Student("최수정","1213");
+		
+		// 요구사항 2 : 학생들을 ArrayList에 저장
+		list.add(student1);
+		list.add(student2);
+		list.add(student3);
+		list.add(student4);
+		
+		boolean flag = true;
+		Scanner sc = new Scanner(System.in);
+		
+		// while문 플래그 사용 n입력시 false값 으로 변경
+		while(flag) {
+			System.out.print("학생 이름 : ");
+			String name = sc.nextLine();
+			boolean flag1 = true;
+			for(Student st : list) {
+				if(st.getName().equals(name)) {
+					System.out.println(name+" 학생의 학번 : "+st.getNo());
+					flag1 = false;
+				}
+			}
+			if(flag1) {
+				System.out.println("찾으시는 학생이 없습니다.");
+			}
+			System.out.print("계속 검색 하시겠습니까?(y,n) : ");
+			String select = sc.nextLine();
+			if(select.equals("n")) {
+				flag = false;
+				System.out.println("프로그램을 종료합니다.");
+			}
+			
+		}
+	}
+}
