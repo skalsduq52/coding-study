@@ -1,0 +1,30 @@
+package number;
+
+public class Number {
+
+	public static void main(String[] args) {
+
+	// 가장 많이 입력된 수 를 출력하시오. ( 1~5 범위 가정)
+	// 배열, for문 사용
+		
+		int[] arr = {1,2,2,3,5,4,2,2,4,3};
+		
+		// 가장많이 입력될 수를 찾기 위한 배열
+		int[] numarr = new int[10];
+		
+		//arr 배열값에 해당하는 numarr번째 배열 값 1씩 더하기 
+		for(int i=0;i<arr.length;i++) {
+			numarr[arr[i]]++;
+		}
+		
+		int num = 0;  // 가장 많이 입력된 수 담을 변수
+		int countnum = 0;	// 입력된 횟수 담을 변수
+		for(int i=0;i<arr.length;i++) {
+			if(countnum < numarr[i]) {
+				countnum = numarr[i];
+				num = i;
+			}
+		}
+		System.out.println("숫자 "+num+" : 횟수 "+countnum);
+	}
+}
