@@ -1,0 +1,80 @@
+package change;
+
+public class change {
+
+	public static void main(String[] args) {
+		// 1. 10진수를 2진수로 변환시키기 (for, while 활용)
+		
+		int num = 30;
+		int bin[] = new int[8];
+		
+			// 나머지 값 배열에 등록
+			for(int i=0;num>0;i++) {
+				bin[i] = num%2;
+				num = num/2;
+				System.out.println(bin[i]);
+			}
+			
+			// 편의상 8자리 까지만
+			// 등록된 배열에서 역으로 출력
+			for(int i=7;i>=0;i--) {
+				System.out.print(bin[i]);
+				if(i==4) {
+					System.out.print(" ");
+				}
+			}
+	}
+}
+
+--------------------------------------------------------------------------------------------------------------
+
+package charnge;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class number {
+
+	public static void main(String args[]) {
+		// 2. 최대 공약수 구하기
+			
+		Scanner sc = new Scanner(System.in);
+		// 약수 담을 리스트 생성
+		List<Integer> alist = new ArrayList<>();
+		List<Integer> blist = new ArrayList<>();
+		// 입력 값 받음
+		System.out.print("첫 번째 수 : ");
+		int a = sc.nextInt();
+		System.out.print("두 번째 수 : ");
+		int b = sc.nextInt();
+		
+		// 약수 검사 후 리스트에 추가
+		for(int i=1; i<=a; i++) {
+			if(a%i==0) {
+				alist.add(i);
+			}
+		}
+		for(int i=1; i<=b; i++) {
+			if(b%i==0) {
+				blist.add(i);
+			}
+		}
+		
+		// 최대공약수 변수 생성
+		int num = 1;
+		
+		// a리스트와 b리스트의 값 비교 후 최대공약수 삽입
+		for(int i=0; i<alist.size(); i++) {
+			for(int z = 0; z<blist.size(); z++) {
+				if(alist.get(i)==blist.get(z)) {
+					num = alist.get(i);
+				}
+			}
+		}
+		System.out.println("최대공약수 : "+num);
+				
+	}
+	
+	
+}
