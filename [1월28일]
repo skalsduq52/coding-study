@@ -1,0 +1,51 @@
+package number;
+
+public class Number3 {
+
+	public static void main(String args[]) {
+		// 문제1. 입력된 수의 각 자릿수의 합을 구하기
+		// ex) 1234  =   1+2+3+4 = 10;
+		
+		// 변수 선언
+		int num = 12345;
+		int sum = 0;
+		
+		// 반복 숫자를 10으로 나눈 몫을 sum에 추가 해주고 num에는 10으로 나눈 값을 저장
+		for(int i = 0;num>0;i++ ) {
+			sum += num%10;
+			num = num/10;
+		}
+		
+		System.out.println(sum);
+		
+	}
+}
+
+---------------------------------------------------------------------------------------------------
+
+package number;
+
+public class Number4 {
+
+	public static void main(String args[]) {
+
+		// 문제2. 입력된 수(N) 만큼 N행 N열의 형태로 연속으로 출력되는 숫자 사각형을 출력하시오
+		// ex ) 입력 값 : 4
+		// 1 2 3 4
+		// 5 6 7 8
+		// 9 10 11 12
+		// 13 14 15 16
+
+		// 입력 값 변수 선언
+		int num = 4;
+		
+		// 첫 줄 값을 위해 0으로 시작 +1과 j를 사용해서 값을 더해줌
+		for (int i = 0; i < num; i++) {
+			for(int j = 0; j<num; j++) {
+				System.out.print(i*num+1+j+" ");
+			}
+			System.out.println();
+		}
+	}
+}
+
