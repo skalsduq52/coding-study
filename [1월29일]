@@ -1,0 +1,53 @@
+package number;
+
+public class Number5 {
+
+	public static void main(String[] args) {
+		// 문제1. 숫자 사각형 2
+		// N행 N열의 형태로 출력하지만 1행은 순서대로 출력하고 다음행은 역순으로 출력하기 반복
+		// ex    1   2  3  4
+		// 		 8   7  6  5
+		// 		 9  10 11 12
+		// 		 16 15 14 13
+		int num = 4;
+		
+		// 홀수 번째 줄은 역으로 출력하기위해 if문을 통해 검증
+		for(int i=0; i<num;i++) {
+			if(i%2==0) {
+				for(int j=0; j<num;j++) {
+					System.out.print(i*num+1+j+" ");
+				}	
+			}else {
+				for(int j=num; j>=1;j--) {
+					System.out.print(i*num+j+" ");
+				}	
+			}
+			System.out.println();
+		}
+		
+	}
+
+}
+-----------------------------------------------------------------------------------------------------------
+package number;
+
+public class Number6 {
+
+	public static void main(String args[]) {
+		// 문제2. 숫자사각형 3
+		// 입력된 수만큼 N행 N열의 형태로 출력
+		// ex    1  5   9  13
+		// 		 2  6  10  14 
+		// 		 3  7  11  15
+		// 		 4  8  12  16
+		int num = 4;
+		int result = 0;
+		
+		for(int i = 1; i<=num;i++) {
+			for(int j = 0; j<num;j++) {
+				System.out.print(j*num+i+" ");
+			}
+			System.out.println();
+		}
+	}
+}
