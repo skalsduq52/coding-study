@@ -1,0 +1,60 @@
+
+public class star1 {
+
+	public static void main(String args[]) {
+
+		// 문제 1. 별 찍기
+		// ex ) 입력값 5
+		//		★★★★★
+		//		☆★★★★
+		//		☆☆★★★
+		//		☆☆☆★★
+		//		☆☆☆☆★
+		
+		int num = 5;
+		
+		for(int i = 0; i<num; i++) {
+			for(int j = 0; j<num; j++) {
+				if(i<=j) {
+				System.out.print("★");
+				}else {
+					System.out.print("☆");
+				}
+			}
+			System.out.println();
+		}
+		
+	}
+}
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+public class star2 {
+
+	public static void main(String args[]) {
+		
+		// 문제 2. 별 찍기
+		// ex) 입력 값 5
+		//		☆☆☆☆★
+		//		☆☆☆★★
+		//		☆☆★★★
+		//		☆★★★★
+		//		★★★★★
+
+		int num = 5;
+		
+		for(int i = 0; i<num; i++) {
+			for(int j = num-1; j>=0; j--) {
+				if(i>=j) {
+				System.out.print("★");
+				}else {
+					System.out.print("☆");
+				}
+			}
+			System.out.println();
+		}
+		
+	}
+}
