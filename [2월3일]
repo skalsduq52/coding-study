@@ -1,0 +1,51 @@
+package number;
+
+public class Number9 {
+
+	public static void main(String[] args) {
+
+		// 문제1. 다음 입력 n의 m승의 결과를 출력하시오
+		// ex) 입력 5 3
+		// 결과 125
+
+		int n = 5;
+		int m = 3;
+		int result = 1;
+
+		for (int i = 1; i <= m; i++) {
+			result *= n;
+		}
+		System.out.println(result);
+		
+		// 문제2. 삼육구 출력  (100까지)
+		// 1 2 짝 4 5 짝 7 8 짝 10 .... 짝짝 100
+		
+		for (int i = 1; i <= 100; i++) {
+			if(i<10) {
+				if(i%3==0) {
+					System.out.print("짝  ");
+				}else {
+					System.out.print(i+" ");
+				}
+			} else {
+				if(i%10==0) {
+					if((i/10)%3==0) {
+						System.out.print("짝  ");
+					}else {
+						System.out.print(i+" ");
+					}
+				}else {
+					if((i%10)%3==0 && (i/10)%3==0) {
+						System.out.print("짝짝  ");
+					} else if((i%10)%3==0 || (i/10)%3==0) {
+						System.out.print("짝  ");
+					} else {
+						System.out.print(i+" ");
+					}
+				}
+			}
+				
+	
+		}
+	}
+}
