@@ -1,0 +1,54 @@
+package number;
+
+public class Number10 {
+
+	// 문제1. 학생 수 와 점수들이 차례로 입력된다 평균 점수를 넘은 학생들의 비율을 출력하시오.
+	// ex) 7 100 95 90 80 70 60 50
+	// 결과 : 57.143%
+
+	public static void main(String[] args) {
+		int[] arr = {7,100,95,90,80,70,60,50};
+		
+		int result = 0;
+		
+		for(int i=1;i<arr.length;i++) {
+			result += arr[i];
+		}
+		
+		double avg = (double)result/arr[0];
+		
+		int student = 0;
+	
+		for(int i=1;i<arr.length;i++) {
+			if(arr[i] > avg) {
+				student++;
+			}
+		}
+		
+		System.out.println((student/(double)arr[0])*100+"%");
+		
+		
+	// 문제 2. 숫자 더하기 사이클 구하기
+		//입력 : 26
+		//정답: 4   (26시작 2+6 = 8 , 68 6+8 = 14  84,  8+4=12  42,  4+2 = 6 26)
+		
+		int n = 97;
+		int m = 97;
+		System.out.println(26/10);
+		
+		int i= 0;
+		boolean flag = true;
+		
+		while(flag) {
+			n = ((n%10)*10)+(n/10+n%10)%10;
+			System.out.println(n);
+			i++;
+			if(n==m) {
+				flag = false;
+			}
+		}
+		
+		System.out.println("결과 값 : "+i);
+		
+	}
+}
