@@ -1,0 +1,107 @@
+package sdsdsd;
+
+public class number {
+
+	public static void main(String[] args) {
+		
+		// 문제 1 : 시간 외 근무 수당
+//		A대학에서는 시간외 근무를 수기로 작성하고 있다. 행정실의 K씨는 시간외 근무 수당을 전산으로 처리하고자 한다. 이 대학의 시간외 근무 수당 규정은 아래와 같다.
+//		1. 시간외 근무는 최초 1시간은 제외하며, 최대 4시간까지 인정한다.
+//		2. 시간외 근무에 따른 금액은 30분에 5,000원으로 한다.
+//		3. 5일간의 시간외 근무 합계가 15시간 이상이면 받는 금액의 5%를 감하여 지급한다.
+//		4. 5일간의 시간외 근무 합계가 5시간 이하이면 받는 금액의 5%를 더하여 지급한다.
+//		시간외 근무 수당을 계산하는 프로그램을 작성하시오.
+		
+//		1. 5일간의 시간외 근무 시작 시각 s와 종료 시각 e가 주어진다. (단, 16.0 ≦ s ≦ e ≦ 24.0)
+//		2. 30분 단위로 입력이 가능하며, 30분은 0.5로 입력된다. (16시 30분은 16.5로 표기한다.)
+
+//		첫 줄에 최종 시간외 근무 수당을 출력한다(단, 단위는 생략한다).
+		
+//		입력 예시   
+//		16.0 16.5
+//		17.0 20.5
+//		18.5 23.0
+//		22.5 23.5
+//		19.5 22.5
+//
+//		출력 예시
+//		80000
+		
+		double arr1[] = {16.0, 16.5};
+		double arr2[] = {17, 20.5};
+		double arr3[] = {18.5, 23.0};
+		double arr4[] = {22.5, 23.5};
+		double arr5[] = {19.5, 22.5};
+		
+		double arr6[] = new double[5];
+		
+		arr6[0] = arr1[1]-arr1[0]; 
+		arr6[1] = arr2[1]-arr2[0]; 
+		arr6[2] = arr3[1]-arr3[0]; 
+		arr6[3] = arr4[1]-arr4[0]; 
+		arr6[4] = arr5[1]-arr5[0]; 
+		
+		double result = 0;
+		
+		for(int i= 0; i<arr6.length; i++) {
+			if(arr6[i]>1) {
+				result += (arr6[i]-1);
+						}
+		}
+		
+		if(result >= 15) {
+			System.out.println(((result/0.5)*5000) - ((result/0.5)*5000)*0.05);
+		} else if(result<=5) {
+			System.out.println(((result/0.5)*5000) + ((result/0.5)*5000)*0.05);
+		} else {
+			System.out.println(Integer.parseInt(String.valueOf(Math.round((result/0.5)*5000))));
+		}
+		
+		
+	}
+
+package sdsdsd;
+
+import java.util.Scanner;
+
+public class asd {
+
+	public static void main(String[] args) {
+		
+		//문제 2. 주민등록번호의 출생년도, 출생월, 출생일 및 성별을 출력하는 프로그램을 작성하시오.
+//		출생년도는 주민등록번호 앞 2자리이고, 출생월은 주민등록번호 3, 4자리, 출생일은 주민등록번호 5, 6 자리,
+//		성별은 ‘-’ 문자 다음에 나오는 숫자가 1이면 2000년 이전에 출생한 남자,
+//		2면 2000년 이전에 출생한 여자로 한다. 만약, ‘-’ 문자 다음에 3이면 2000년 이후에 출생한 남자,
+//		4면 2000년 이후에 출생한 여자로 한다.
+//		(출력시 남자는 ‘M’, 여자는 ‘F’로 출력한다.)
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("주민등록번호 를 입력하세요(-포함) : ");
+		String bid = sc.nextLine();
+		System.out.println(bid);
+		
+		String bidd = bid.substring(7,8);
+		
+		if(bidd.equals("1") || bidd.equals("2")) {
+			if(bidd.equals("1")) {
+				System.out.println("19"+bid.substring(0,2)+"/"+bid.substring(2,4)+
+						"/"+bid.substring(4,6)+" M");
+			}else {
+				System.out.println("19"+bid.substring(0,2)+"/"+bid.substring(2,4)+
+						"/"+bid.substring(4,6)+" F");
+			}
+		}else {
+			if(bidd.equals("3")) {
+				System.out.println("20"+bid.substring(0,2)+"/"+bid.substring(2,4)+
+						"/"+bid.substring(4,6)+" M");
+			}else {
+				System.out.println("20"+bid.substring(0,2)+"/"+bid.substring(2,4)+
+						"/"+bid.substring(4,6)+" F");
+			}
+		}
+		
+		
+	}
+}
+
+
