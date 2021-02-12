@@ -1,0 +1,41 @@
+package studentSearch;
+
+public class ddd {
+	
+	public static int mymax(int num1, int num2) {
+		if(num1 > num2) {
+			return num1;
+		}else {
+			return num2;
+		}
+	}
+	
+	public static String substring(String str, int start, int count) {
+		
+		return str.substring(start, count);
+		
+	}
+	
+	public static void main(String[] args) {
+		// 문제1.이 문제는 최댓값 함수를 구현하는 문제입니다.
+
+		//다음 조건을 참고해서 함수 본체만 작성해서 제출하시기 바랍니다.
+		//함수명 : mymax
+		//매개 변수(parameter) :정수형(int) 2개
+		//반환 형(return type) : 정수형(int)
+		//함수 내용 : 두 정수 중 큰 값을 구하는 함수 구현
+	
+		System.out.println(mymax(5,7));
+
+		
+		// 문제2. 서브 스트링 함수는 문자열 처리에 있어 아주 유용한 함수이다.(엑셀이나 VB에선 Mid함수)
+//			이 함수는 원본 문자열에서 특정위치에서 부터 몇 글자를 추출하는 함수이다.
+//			이 함수를 직접 구현해보자.
+//			char *mysubstr(char *str, int start, int count)
+
+		System.out.println(substring("키키ㅣ키니니니입지딩ㄴㅇㄴㅇ", 5, 10));
+		
+		
+	}
+
+}
