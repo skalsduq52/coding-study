@@ -1,0 +1,59 @@
+package asd;
+
+import java.util.Scanner;
+
+public class zz {
+
+	public static void main(String[] args) {
+		// 문제1. [문제 1] 홀수의 합 구하기 [16점]
+//		7개의 자연수가 주어질 때, 이들 중 홀수인 자연수들을 모두 찾아 그 합을 구하는 프로그램을 작성하시오.
+//		예를 들어 12, 39, 40, 51, 75, 87, 92가 주어지면 이들 중 홀수는 39, 51, 75, 87 이며, 그 합은 39 + 51 + 75 + 87 = 252 가 된다.
+		
+		int arr[] = {12, 39, 40, 51, 75, 87, 92};
+		int result = 0;
+		
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i]%2 == 1) {
+				result += arr[i];
+			}
+		}
+		if(result==0) {
+			System.out.println(-1);
+		}else {
+			System.out.println("합 : "+result);
+		}
+		
+		
+		// 문제 2.A선생님이 연말정산을 하려고 한다. 근로소득공제액은 총급여액에 따라 달라지며, 아래 표의 규칙에 의해서 결정된다.(근로소득공제액은 만원미만은 절사한다.)
+//			총 급여액	근로소득공제액
+//			500만원 이하	총 급여액의 100분의 70
+//			500만원 초과 1500만원 이하	350만원 + 500만원 초과하는 금액의 100분의 40
+//			1500만원 초과 4500만원 이하	750만원 + 1500만원 초과하는 금액의 100분의 15
+//			4500만원 초과 1억원 이하	1200만원 + 4500만원 초과하는 금액의 100분의 5
+//			1억원 초과	1475만원 + 1억원 초과하는 금액의 100분의 2
+//			예를 들어 총급여액이 3130만원인 경우 750+(3130−1500)∗15/100=994.5가 되므로 근로소득공제액은 994만원이 된다.
+//			
+//			근로소득공제액을 구하는 프로그램을 작성하시오.
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("급여 : ");
+		int n = sc.nextInt();
+		
+		double money = 0;
+		
+		if(n<=500) {
+			money = n*0.7;
+		}else if(n<=1500) {
+			money = 350+(n-500)*0.4;
+		}else if(n<=4500) {
+			money = 750+(n-1500)*0.15;
+		}else if(n<=10000) {
+			money = 1200+(n-4500)*0.05;
+		}else {
+			money = 1475+(n-10000)*0.02;
+		}
+		
+//		int mo = Integer.parseInt(String.valueOf(Math.floor(money)));
+		System.out.println("소득공재액 : "+Math.floor(money));
+	}
+}
