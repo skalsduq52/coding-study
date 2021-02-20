@@ -1,0 +1,61 @@
+package asd;
+
+import java.util.Scanner;
+
+public class asdsdd {
+
+	public static void main(String[] args) {
+		
+//		문제1. 주현이 엄마는 주현이를 영재로 키우기 위해 매일 혹독한 기억력 테스트를 하고 있다.
+//		N개의 숫자를 먼저 말해주고, M개의 질문을 하면서 그 숫자가 있었는지 없었는지 테스트한다.
+//		만약 있었다면 1을 출력하고, 없었다면 0을 출력한다.
+//		이번에는 주현이가 좋아하는 3단 합체 변신로봇 '또봇 트라이탄'이 선물로 걸려있다.
+//		주현이를 도와 줄수 있는 프로그램을 만드시오.
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("점수 입력 : ");
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		for(int i = 0; i<n;i++) {
+			System.out.print("점수"+(i+1)+" : " );
+			int num1 = sc.nextInt();
+			arr[i] = num1;
+		}
+		
+		System.out.print("질문 개수 : ");
+		int n1 = sc.nextInt();
+		int arr1[] = new int[n1];
+		
+		for(int i = 0; i<n1; i++) {
+			System.out.print("질문 "+(i+1)+" : ");
+			int n2 = sc.nextInt();
+			for(int j = 0; j<arr.length;j++) {
+				if(n2 == arr[j]) {
+					arr1[i] = 1;
+					break;
+				}else {
+					arr1[i] = 0;
+				}
+			}
+		}
+		
+		for(int i = 0; i<arr1.length; i++) {
+			System.out.print(arr1[i]+" ");
+		}
+		
+		
+		// 문제2. 어떤 문자열이 있을 때 문자 t의 위치를 모두 찾아 출력하시오.
+//				공백이 없는 문자열이 한 줄 입력된다.(10글자 이하)
+//				소문자 t의 위치를 공백으로 분리하여 모두 출력하시오.
+		
+		String str = "to2stxcdt";
+		
+		for(int i = 0; i<str.length();i++) {
+			if(str.charAt(i) == 't') {
+				System.out.print(i+1+" ");
+			}
+		}
+		
+	}
+}
