@@ -1,0 +1,32 @@
+package asd;
+
+import java.text.NumberFormat;
+import java.util.Scanner;
+
+public class asd {
+	public static void main(String[] args) {
+//		문제1. 큰 수를 표현할 때 자릿수를 쉽게 구분하기 위해 천단위 구분 기호인 콤마(,)를 사용한다.
+//		어떤 수가 입력되면 천단위 구분 기호를 넣어 그 수를 다시 출력하는 프로그램을 작성하시오.
+
+		int n = 8;
+		int m = 12421421;
+		String num = NumberFormat.getInstance().format(m);
+		System.out.println(num);
+		
+	}
+	
+//		문제2. 함수만들기
+//		정수 n개가 주어졌을 때, n개의 합을 구하는 함수를 작성하시오.
+//		작성해야 하는 함수는 다음과 같다.
+//		Java: long sum(int[] a); (클래스 이름: Test)
+//		a: 합을 구해야 하는 정수 n개가 저장되어 있는 배열 (0 ≤ a[i] ≤ 1,000,000, 1 ≤ n ≤ 3,000,000)
+//		리턴값: a에 포함되어 있는 정수 n개의 합
+	
+	public long sum(int[] a) {
+		long sum = 0;
+		for(int num : a) {
+			sum += num;
+		}
+		return sum;
+	}
+}
