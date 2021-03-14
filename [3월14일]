@@ -1,0 +1,65 @@
+/		문제1.보림이는 엄마와 함께 놋데리아에 갔다.
+//		보림이는 먹고 싶은게 많았으나 엄마가 살찐다고 2가지만 골라서 먹으라고 했다.
+//		그리고 2메뉴의 칼로리 합이 500보다 크면 엄마가 화를 내고, 500이하면 화를 내지 않으신다.
+//		보림이가 선택할 수 있는 메뉴는 다음과 같다.
+//		1. 치즈버거 : 400 칼로리
+//		2. 야채버거 : 340 칼로리
+//		3. 우유 : 170 칼로리
+//		4. 계란말이 : 100 칼로리
+//		5. 샐러드 : 70 칼로리
+//		이 메뉴들 중 2가지 메뉴를 선택했을 때 칼로리 합을 계산하고, 그 칼로리 합이 500보다 크면 "angry", 500이하면 "no angry"를 출력하시오.
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("======= 메뉴 ======= ");
+		System.out.println("1. 치즈버거 : 400 칼로리");
+		System.out.println("2. 야채버거 : 340 칼로리");
+		System.out.println("3. 우유 : 170 칼로리");
+		System.out.println("4. 계란말이 : 100 칼로리");
+		System.out.println("5. 샐러드 : 70 칼로리");
+		int menu[] = {0,400,340,170,100,70};
+		
+
+		System.out.print("메뉴 1 : ");
+		int n = sc.nextInt();
+		System.out.print("메뉴 2 : ");
+		int n1 = sc.nextInt();
+		int n2 = menu[n]+menu[n1];
+		
+		if(n2 > 500) {
+			System.out.println("angry");
+		}else {
+			System.out.println("no angry");
+		}
+	
+//		문제 2.철수와 영희는 한 사람이 특정 월(month)을 지목하면 나머지 사람이 그 달의 마지막 날이 며칠인지 알아맞히는 게임을 하였다. 두 사람 모두 처음엔 서툴렀지만 게임을 계속하다 보니 금방 익숙해졌다. 그래서 게임의 규칙을 조금 어렵게 바꿔 연도와 월을 말하면 그 달의 마지막 날이 며칠인지 알아맞히기로 하였다.
+//		이 규칙이 어려운 이유는 2월이 윤달이 있기 때문이다.
+//		2월이 29일인 해를 윤년이라고 하는데, 윤년의 판단은 아래 두 조건 중 하나만 만족하면 된다.
+//		- 조건 1 : 400의 배수인 해는 모두 윤년이다.
+//		- 조건 2 : 4의 배수인 해들 중 100의 배수가 아닌 해들은 모두 윤년이다.
+//		연도와 월을 알고 있을 때 그 달의 마지막 날을 구하는 프로그램을 작성하시오.	
+		
+		System.out.print("연도 : ");
+		int year = sc.nextInt();
+		System.out.print("월 : ");
+		int month = sc.nextInt();
+		
+		switch(month){
+			case 1 : 
+			case 3 :
+			case 5 :
+			case 7 :
+			case 8 :
+			case 10 :
+			case 12 : System.out.println("31");
+			break;
+			case 2 : if(year%400 ==0 || (year%4 ==0 && year%100 !=0)) {
+				System.out.println("29");
+					}else {
+						System.out.println("28");
+					}
+				break;
+			default : System.out.println("30");
+				break;
+		}
+	}
