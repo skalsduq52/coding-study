@@ -1,0 +1,68 @@
+package dddd;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+public class dddd {
+
+	public static void main(String[] args) {
+
+		Random random = new Random();
+		Scanner sc = new Scanner(System.in);
+
+		int[] arr = new int[3];
+		int[] arr1 = new int[3];
+		int num = 0;
+		List slist = new ArrayList();
+		List blist = new ArrayList();
+
+		for (int i = 0; i <= 2; i++) {
+			arr[i] = random.nextInt(9) + 1;
+			for (int j = 0; j < i; j++) {
+				if (arr[i] == arr[j]) {
+					i--;
+				}
+			}
+		}
+		
+		while (slist.size() != 3) {
+			slist.clear();
+			blist.clear();
+			System.out.print("숫자를 입력하세요 : ");
+			int num1 = sc.nextInt();
+
+			for (int i = 2; i >= 0; i--) {
+				arr1[i] = num1 % 10;
+				num1 /= 10;
+			}
+
+			for (int i = 0; i <= 2; i++) {
+				for (int j = 0; j <= 2; j++) {
+					if (arr1[j] == arr[i]) {
+						if (j == i) {
+							slist.add(1);
+						} else {
+							blist.add(2);
+						}
+					}
+				}
+			}
+			if (slist.size() > 0) {
+				if (slist.size() == 3) {
+					System.out.println(slist.size() + " 스트라이크");
+					System.out.println("게임 끝");
+				} else {
+					System.out.println(slist.size() + " 스트라이크");
+				}
+
+			}
+			if (blist.size() > 0) {
+				System.out.println(blist.size() + " 볼");
+			}
+
+		}
+
+	}
+}
